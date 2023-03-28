@@ -52,7 +52,8 @@ function renderCountryInfo(data) {
             countryInfoEl.insertAdjacentHTML('afterbegin', countryFullInfo);
         }
 }
-
+clearAdditionalInfo()
+clearSearching()
 renderCountryInfo();
 
 function clearSearching() {
