@@ -22,6 +22,7 @@ function renderCountryInfo(data) {
         return `<li style="list-style:none; padding:10px; display:flex; justify-content:flex-start">
         <img width=5% style="margin-right:10px; align-items:baseline" src='${flags.svg}' alt="Flag"><h1 style="font-size:18px">${name.official}</h1>
      </li>`}).join('');
+    
     console.log(countryItem)
     console.log(data)
 
@@ -56,3 +57,5 @@ function clearSearching() {
 function error() {
     return Notiflix.Notify.failure('Oops, there is no country with that name')
 };
+
+
