@@ -42,18 +42,18 @@ function renderCountryInfo(data) {
         if (data.length > 10) {
            return Notiflix.Notify.warning('Too many matches found. Please enter a more specific name.')
         } else if (data.length>=2 && data.length< 10) {
-            clearAdditionalInfo()
-            clearSearching()
+            clearAdditionalInfo();
+            clearSearching();
             return listEl.insertAdjacentHTML('afterbegin', countryItem);
         } else if (data.length === 1) {
-            clearAdditionalInfo()
-            clearSearching()
+            clearAdditionalInfo();
+            clearSearching();
             listEl.insertAdjacentHTML('afterbegin', countryItem);
             countryInfoEl.insertAdjacentHTML('afterbegin', countryFullInfo);
         }
 }
-clearAdditionalInfo()
-clearSearching()
+clearAdditionalInfo();
+clearSearching();
 renderCountryInfo();
 
 function clearSearching() {
