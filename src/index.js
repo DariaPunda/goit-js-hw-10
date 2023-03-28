@@ -51,18 +51,16 @@ function renderCountryInfo(data) {
             listEl.insertAdjacentHTML('afterbegin', countryItem);
             countryInfoEl.insertAdjacentHTML('afterbegin', countryFullInfo);
         }
-}
-clearAdditionalInfo();
-clearSearching();
+};
 renderCountryInfo();
 
 function clearSearching() {
    return listEl.innerHTML = '';
-}
+};
 
 function clearAdditionalInfo() {
     return countryInfoEl.innerHTML = '';
-}
+};
 
 function error() {
     return Notiflix.Notify.failure('Oops, there is no country with that name')
