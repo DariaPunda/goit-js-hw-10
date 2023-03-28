@@ -28,11 +28,12 @@ function renderCountryInfo(data) {
 
 
     const countryFullInfo = data.map(({capital, population, languages }) => {
-        return `<h2 style="font-size:20px; font-weight: 700;">Capital:<span 
+        return `<h2 style="font-size:20px; font-weight: 700; padding-left:40px">Capital:<span 
             style="font-weight: 400">${capital}</span></h2><p style="font-size:18px; 
-            font-weight: 700;">Population:<span style="font-weight: 400">
-            ${population}Languages:<span style="font-weight: 400">
-            ${Object.values(languages)}</span></span></p>`
+            font-weight: 700; padding-left:40px">Population:<span style="font-weight: 400">
+            ${population}</span></p><p style="font-size:18px; 
+            font-weight: 700; padding-left:40px">Languages:<span style="font-weight: 400">
+            ${Object.values(languages)}</span></p>`
     }).join('');
     
     console.log(countryFullInfo);
@@ -40,7 +41,8 @@ function renderCountryInfo(data) {
 
         if (data.length > 10) {
            return Notiflix.Notify.warning('Too many matches found. Please enter a more specific name.')
-        } else if (2 < data.length < 10) {
+        } else if (data.length>=2 && data.length< 10) {
+            clearAdditionalInfo()
             clearSearching()
             return listEl.insertAdjacentHTML('afterbegin', countryItem);
         } else if(data.length === 1) {
@@ -54,8 +56,11 @@ function clearSearching() {
    return listEl.innerHTML = '';
 }
 
+function clearAdditionalInfo() {
+    return countryInfoEl.innerHTML = '';
+}
+
 function error() {
     return Notiflix.Notify.failure('Oops, there is no country with that name')
 };
-
 
