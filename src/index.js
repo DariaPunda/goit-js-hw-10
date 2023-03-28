@@ -45,7 +45,9 @@ function renderCountryInfo(data) {
             clearAdditionalInfo()
             clearSearching()
             return listEl.insertAdjacentHTML('afterbegin', countryItem);
-        } else if(data.length === 1) {
+        } else if (data.length === 1) {
+            clearAdditionalInfo()
+            clearSearching()
             listEl.insertAdjacentHTML('afterbegin', countryItem);
             countryInfoEl.insertAdjacentHTML('afterbegin', countryFullInfo);
         }
